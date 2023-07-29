@@ -4,6 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import SideBar from "../SideBar/SideBar";
 import FilterContext from "../FilterContext";
 import Products from "../Products/Products";
+import Modal from "../Modal/Modal";
 
 function Body() {
   const [checked, setChecked] = useState({
@@ -42,6 +43,7 @@ function Body() {
 
   return (
     <FilterContext.Provider value={checked}>
+      <Modal />
       <Row className={styles.body + " p-0 m-0"}>
         <Col xs={3} className={styles.filters + " p-1"}>
           <SideBar

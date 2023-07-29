@@ -1,0 +1,18 @@
+.trendsImg {
+  height: 170px;
+  width: 130px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.trendsDesc {
+  font-weight: 400;
+  font-size: 0.65rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
