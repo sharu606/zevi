@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./Body.module.css";
 import { Row, Col } from "react-bootstrap";
 import SideBar from "../SideBar/SideBar";
+import FilterContext from "../FilterContext";
+import Products from "../Products/Products";
 
 function Body() {
   const [checked, setChecked] = useState({
@@ -9,7 +11,13 @@ function Body() {
     hm: 0,
     500: 0,
     3000: 0,
-    rating: 0,
+    rating: {
+      1: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+      2: 0,
+    },
   });
 
   const handleCheckChange = (event) => {
@@ -26,21 +34,26 @@ function Body() {
     const { name } = event.target;
 
     setChecked((prev) => {
-      const items = { ...prev };
-      items["rating"] = name;
+      const items = { ...prev, rating: { ...prev.rating } };
+      items.rating[name] = ~items.rating[name];
       return items;
     });
   };
 
   return (
-    <Row className={styles.body + " p-0 m-0"}>
-      <Col xs={3} className={styles.filters + " p-1"}>
-        <SideBar
-          handleCheckChange={handleCheckChange}
-          handleRatingChange={handleRatingChange}
-        />
-      </Col>
-    </Row>
+    <FilterContext.Provider value={checked}>
+      <Row className={styles.body + " p-0 m-0"}>
+        <Col xs={3} className={styles.filters + " p-1"}>
+          <SideBar
+            handleCheckChange={handleCheckChange}
+            handleRatingChange={handleRatingChange}
+          />
+        </Col>
+        <Col>
+          <Products />
+        </Col>
+      </Row>
+    </FilterContext.Provider>
   );
 }
 
