@@ -13,3 +13,9 @@
   margin: 0;
   height: 25px;
 }
+
+@media (max-width: 768px) {
+  .sideBar {
+    display: none;
+  }
+}

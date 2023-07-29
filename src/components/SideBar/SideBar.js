@@ -4,7 +4,7 @@ import Star from "../Star/Star";
 
 function SideBar(props) {
   return (
-    <>
+    <div className={styles.sideBar}>
       <p>Search Results</p>
       <div className={styles.filtersList + " px-4"}>
         <div className={styles.brand + " py-3"}>
@@ -110,7 +110,7 @@ function SideBar(props) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

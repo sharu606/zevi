@@ -18,7 +18,7 @@ function Products() {
       after: 1349,
       before: 1399,
       desc: "Long A-line kurta",
-      stars: 2,
+      stars: 4,
       reviews: 567,
       brand: "hm",
     },
