@@ -1,53 +1,129 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import styles from "./Products.module.css";
 import FilterContext from "../FilterContext";
-import { Image } from "react-bootstrap";
-import Star from "../Star/Star";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import product1 from "../../assets/product/product1.PNG";
+import Product from "../Product/Product";
 
 function Products() {
-  const [wish, setWish] = useState(0);
-
-  function clickHandler(state) {
-    setWish(state);
-  }
-
   const filters = useContext(FilterContext);
+  const productData = [
+    {
+      after: 549,
+      before: 599,
+      desc: "Long A-line kurta",
+      stars: 4,
+      reviews: 210,
+      brand: "mango",
+    },
+    {
+      after: 1349,
+      before: 1399,
+      desc: "Long A-line kurta",
+      stars: 2,
+      reviews: 567,
+      brand: "hm",
+    },
+    {
+      after: 549,
+      before: 599,
+      desc: "Straps Longline Regular Top",
+      stars: 4,
+      reviews: 23,
+      brand: "mango",
+    },
+    {
+      after: 749,
+      before: 799,
+      desc: "Straps Longline Regular Top",
+      stars: 5,
+      reviews: 355,
+      brand: "mango",
+    },
+    {
+      after: 649,
+      before: 699,
+      desc: "Pleated Floral Embroidered Top",
+      stars: 3,
+      reviews: 67,
+      brand: "hm",
+    },
+    {
+      after: 549,
+      before: 599,
+      desc: "Long A-line kurta",
+      stars: 4,
+      reviews: 443,
+      brand: "hm",
+    },
+    {
+      after: 349,
+      before: 399,
+      desc: "Pleated Floral Embroidered Top",
+      stars: 5,
+      reviews: 564,
+      brand: "mango",
+    },
+    {
+      after: 649,
+      before: 699,
+      desc: "Embroidered Top",
+      stars: 3,
+      reviews: 123,
+      brand: "hm",
+    },
+  ];
+
   return (
-    <div className={styles.productsList}>
-      <div className={styles.product}>
-        <div className={styles.productHeader}>
-          <div className={styles.imgCon + " mb-2"}>
-            <Image
-              src={product1}
-              alt='product1'
-              className={styles.productImg}
-            />
-          </div>
-          <div className={styles.popup + " p-1"}>View Product</div>
-          {!wish && (
-            <FaRegHeart
-              className={styles.unheart}
-              onClick={() => clickHandler(1)}
-            />
-          )}
-          {wish === 1 && (
-            <FaHeart className={styles.heart} onClick={() => clickHandler(0)} />
-          )}
-        </div>
-        <div className={styles.productDesc + " p-1"}>
-          <p className='p-0 m-0'>Long A-line kurta</p>
-          <p className={" p-0 py-1 m-0"}>
-            <span className={styles.priceBef}>
-              <s>Rs.599</s>
-            </span>
-            <span className={styles.priceAft}>Rs.549</span>
-          </p>
-          <Star number='4' />
-          <span className={styles.noOfReviews}>(210)</span>
-        </div>
-      </div>
+    <div className={styles.productsList + " p-3"}>
+      {filters.mango +
+        filters.hm +
+        filters[3000] +
+        filters[500] +
+        filters.rating[1] +
+        filters.rating[2] +
+        filters.rating[3] +
+        filters.rating[4] +
+        filters.rating[5] ===
+        0 &&
+        productData.map((product, index) => (
+          <Product key={index} data={product} index={index} />
+        ))}
+      {filters.mango +
+        filters.hm +
+        filters[3000] +
+        filters[500] +
+        filters.rating[1] +
+        filters.rating[2] +
+        filters.rating[3] +
+        filters.rating[4] +
+        filters.rating[5] !==
+        0 &&
+        productData.map((product, index) => {
+          if (
+            (filters.mango + filters.hm === 0 ||
+              (filters.mango + filters.hm !== 0 &&
+                filters[product.brand] == -1)) &&
+            (filters[3000] + filters[500] === 0 ||
+              (filters[500] === -1 && product.after <= 500) ||
+              (filters[3000] === -1 &&
+                1000 <= product.after &&
+                product.after <= 3000)) &&
+            (filters.rating[1] +
+              filters.rating[2] +
+              filters.rating[3] +
+              filters.rating[4] +
+              filters.rating[5] ===
+              0 ||
+              (filters.rating[1] +
+                filters.rating[2] +
+                filters.rating[3] +
+                filters.rating[4] +
+                filters.rating[5] !==
+                0 &&
+                filters.rating[product.stars] === -1))
+          ) {
+            return <Product key={index} data={product} index={index} />;
+          }
+        })}
     </div>
   );
 }
