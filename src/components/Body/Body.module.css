@@ -1,0 +1,12 @@
+.body {
+  height: 85vh;
+}
+
+.filters {
+  height: 100%;
+}
+
+.body p {
+  font-size: 1.5rem;
+  text-align: center;
+}
