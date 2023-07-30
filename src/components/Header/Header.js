@@ -11,7 +11,7 @@ function Header() {
   return (
     <header className={styles.header + " p-3"}>
       <Row className='p-0 m-0'>
-        <Col></Col>
+        <Col className={styles.collapseSec}></Col>
         <Col xs={6} className={styles.searchSec}>
           <InputGroup className={styles.searchInp}>
             <Form.Control

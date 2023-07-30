@@ -45,7 +45,7 @@ function Body() {
     <FilterContext.Provider value={checked}>
       <Modal />
       <Row className={styles.body + " p-0 m-0"}>
-        <Col xs={1} md={3} className={styles.filters + " p-1"}>
+        <Col xs={5} md={3} className={styles.filters + " p-1"}>
           <SideBar
             handleCheckChange={handleCheckChange}
             handleRatingChange={handleRatingChange}

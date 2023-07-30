@@ -1,7 +1,7 @@
 .productsList {
   height: 85vh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   overflow: scroll;
   overflow-x: hidden;
   flex-wrap: wrap;
