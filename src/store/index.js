@@ -8,7 +8,6 @@ const productSlice = createSlice({
   initialState,
   reducers: {
     wished(state, action) {
-      console.log(action);
       state.data[action.payload.index].wished = action.payload.state;
     },
     addToBag(state, action) {

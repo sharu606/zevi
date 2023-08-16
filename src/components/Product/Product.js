@@ -11,6 +11,7 @@ function Product(props) {
   const dispatch = useDispatch();
 
   function clickHandler(state, index) {
+    console.log(9);
     dispatch(productActions.wished({ state, index }));
   }
 
