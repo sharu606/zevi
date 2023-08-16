@@ -1,8 +1,8 @@
 import { createContext } from "react";
 
 const FilterContext = createContext({
-  mango: 0,
-  hm: 0,
+  roadster: 0,
+  indian: 0,
   500: 0,
   3000: 0,
   rating: {

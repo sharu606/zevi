@@ -1,0 +1,107 @@
+.left {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.right {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.container {
+  height: 80%;
+  overflow: hidden;
+}
+
+.productImg {
+  height: 100%;
+  transition: transform 0.4s;
+  border: 3px solid rgb(185, 184, 184);
+  padding: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container:hover .productImg {
+  transform: scale(1.5);
+  cursor: zoom-in;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.desc {
+  font-size: 0.95rem;
+  color: gray;
+}
+
+.after {
+  font-weight: 500;
+}
+
+.before {
+  font-size: 0.9rem;
+  color: rgb(150, 148, 148);
+}
+
+.tax {
+  font-size: 0.7rem;
+  color: rgb(6, 161, 97);
+  font-weight: 700;
+}
+
+.size {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.sizeBtn {
+  background-color: transparent;
+  border-radius: 100%;
+  border: 1px solid rgb(170, 170, 170);
+  padding: 2px;
+  height: 50px;
+  width: 50px;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.sizeBtn:hover {
+  border: 1px solid #ff3e6c;
+}
+
+.addBtn,
+.wishBtn {
+  background-color: #ff3e6c;
+  color: white;
+  font-size: 0.7rem;
+  border: none;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.wishBtn {
+  background-color: rgb(72, 71, 71);
+}
+
+button:focus {
+  outline: none;
+}
+
+.selected {
+  border: 2px solid #ff3e6c;
+}
+
+a:hover.addBtn {
+  color: white;
+  text-decoration: none;
+}
+
+.heart {
+  color: #ff3e6c;
+}

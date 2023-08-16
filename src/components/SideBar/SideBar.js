@@ -12,20 +12,20 @@ function SideBar(props) {
           <div className={styles.checkbox}>
             <input
               type='checkbox'
-              id='mango'
-              name='mango'
+              id='roadster'
+              name='roadster'
               onChange={props.handleCheckChange}
             />
-            <label for='mango'>Mango</label>
+            <label for='roadster'>Roadster</label>
           </div>
           <div className={styles.checkbox}>
             <input
               type='checkbox'
-              id='hm'
-              name='hm'
+              id='indian'
+              name='indian'
               onChange={props.handleCheckChange}
             />
-            <label for='hm'>H & M</label>
+            <label for='indian'>Indian Terrain</label>
           </div>
         </div>
         <hr className='p-0 m-0' />

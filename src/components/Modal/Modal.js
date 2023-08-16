@@ -4,7 +4,7 @@ import TrendsList from "../Trends/TrendsList";
 import ModalContext from "./ModalContext";
 
 function Modal() {
-  const { show, setShow } = useContext(ModalContext);
+  const { show } = useContext(ModalContext);
 
   const suggestions = [
     "Striped shirt dress",
